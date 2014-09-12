@@ -1,0 +1,7 @@
+body, p, ul {
+	letter-spacing: .01em;
+}
+
+section ul li {
+	margin-bottom: 15px !important;
+}

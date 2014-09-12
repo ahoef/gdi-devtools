@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>GDI Philly - Getting More out of Chrome Developer Tools</title>
+
+	<meta name="description" content="Slide deck for GDI Philly's Chrome Developer Tools class, instructed by Alexandra Hoefinger in September 2014">
+	<meta name="author" content="Girl Develop It">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/gdidefault.css" id="theme">
+	<link rel="stylesheet" href="css/devtools.css">
+
+	<!-- For syntax highlighting -->
+	<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+	<!-- dark editor--><link rel="stylesheet" href="lib/css/dark.css">
+
+	<!-- If use the PDF print sheet so students can print slides-->
+
+	<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<!-- Opening -->
+				<section>
+					<h2>Getting More</h2>
+					<h6>out of</h6>
+					<h2>Chrome's Developer Tools</h2>
+					<br>
+					<p>Slides: <a href="www.ahoef.co/devtools/slides">www.ahoef.co/devtools/slides</a></p>
+					<p>Demo Files: <a href="http://www.ahoef.co/devtools/demo.zip">www.ahoef.co/devtools/demo.zip</a></p>
+				</section>
+
+				<section>
+					<h2>Welcome!</h2>
+					<br>
+					<ul>
+						<li>This class will be a combo of lecture + exercises</li>
+						<li>It is 2.5 hours long, with a 15 minute break</li>
+						<li>Please open demo files in your text editor</li>
+						<li>Please make sure your Chrome is up to date</li>
+						<li>There are no stupid questions &mdash; ask questions at any time!</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Intros</h2>
+					<br>
+					<ul>
+						<li>What's your name and background?</li>
+						<li>What do you hope to learn today?</li>
+						<li>Which of your web projects are you most proud of?</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Overview</h2>
+					<ul>
+						<li>Dev Tools are a set of resources built into every modern browser</li>
+						<li>Purpose is to help view and edit the DOM</li>
+						<li>Very useful in understanding how many pieces of code work together</li>
+						<li>Essential to debugging front-end code</li>
+						<li>Important time savers</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>History</h2>
+					<ul>
+						<li>Webkit’s original web inspector was introduced in 2006</li>
+						<li>Provided an opportunity to view a live DOM hierarchy with the ability to tunnel into nodes</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>History</h2>
+					<img src="images/surfin-safari.png" style="text-align: center; margin: 0 auto;">
+				</section>
+
+				<section>
+					<h2>History</h2>
+					<ul>
+						<li>Google Chrome browser debuted in 2008</li>
+						<li>Expanded webkit’s web inspector and became popular among web developers</li>
+						<li>Now up to 35th version release with channels for Mac, Windows, Linux, Android, and ios</li>
+						<li>Makes up about 43% of web browser market share</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>To note:</h2>
+					<ul>
+						<li><a href="http://getfirebug.com/" target="_blank">Firefox’s Firebug</a> is a comparable resource </li>
+						<li>Many argue that because of the rate of improvements and enhancements from Google research and funding, Firebug lags behind Chrome</li>
+						<li>Chrome is considered to be more 'bleeding edge'</li>
+						<li>Dev Tools in <a href="http://www.google.com/intl/en/chrome/browser/canary.html" target="_blank">Canary</a> provide the ‘latest + greatest’ resources</li>
+					</ul>
+				</section>
+
+				<!-- Basics -->
+
+				<section>
+					<p>We made it through the overview!</p>
+					<br>
+					<img src="http://i106.photobucket.com/albums/m274/bekkiglittz/GIFs/e59c0502.gif" style="margin: 0 auto;">
+					<br>
+					<br>
+					<p>Any questions?</p>
+				</section>
+
+				<section>
+					<h2>Opening DevTools</h2>
+					<p style="text-align:left;">To open Developer Tools,</p>
+					<ul>
+						<li>Hamburger Icon > Tools > Developer Tools </li>
+						<li style="list-style: none;"><img src="images/toolbar.png" style="max-width: 350px;"></li>
+						<li>Keyboard Shortcut for Mac &mdash; option + command + j</li>
+						<li>Keyboard Shortcut for PC &mdash; control + shift + j</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Settings</h2>
+					<p style="text-align:left;">To view Settings,</p>
+					<ul>
+						<li>Click on the gear in upper right corner of DevTools</li>
+					</ul>
+					<br>
+					<br>
+					<p style="text-align:left;">To change Docking,</p>
+					<ul>
+						<li>Click on window icon next to gear</li>
+						<li>Long click to change orientation</li>
+					</ul>
+					<img src="images/devtools-toolbar.png" style="">
+				</section>
+
+				<section>
+					<h2>Basic Inspecting</h2>
+					<br>
+					<ul>
+						<li>On a static page, HTML will mirror exactly what's in code</li>
+						<li>The DOM node tree groups equilateral elements, and allows tunneling from parent to child elements</li>
+						<li>To tunnel, toggle the horizontal and vertical arrows to the left of tags</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Basic Inspecting</h2>
+					<br>
+					<ul>
+						<li>Hover over HTML to see elements highlighted in blue in browser pane</li>
+						<li>Two ways to view the code for a specific visual element:
+							<ul>
+								<li>Right click item > Inspect Element</li>
+								<li>Click magnifying glass in upper left, then click item</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Basic Inspecting</h2>
+					<br>
+					<p>To manipulate HTML:</p>
+					<ul>
+						<li>Delete node</li>
+						<li>Drag node</li>
+						<li>Right click element > 'Edit as HTML'</li>
+					</ul>
+
+				</section>
+
+				<section>
+					<h2>Basic Inspecting</h2>
+					<br>
+					<p>To view info about an image:</p>
+					<ul>
+						<li>Hover over image path in img tag</li>
+						<li>See actual and rendered sizes</li>
+					</ul>
+
+				</section>
+
+				<section>
+					<h2>Basic Inspecting</h2>
+					<ul>
+						<li>When an html element is selected, its matching CSS will be listed in the Styles tab, in order of inheritance</li>
+					</ul>
+					<img src="images/style-tab.png">
+				</section>
+
+				<section>
+					<h2>Basic Inspecting</h2>
+					<p>CSS Inheritance in a nut shell:</p>
+					<ul style="width: 600px;">
+						<li>!important tags
+							<pre><code>.slider {color: pink !important;}</code></pre>
+						</li>
+						<li>CSS from JavaScript
+							<pre><code>$('.slider').css('color', 'green');</code></pre>
+						</li>
+						<li>inline styles
+							<pre><code>class="slider" style="color: red"</code></pre></li>
+							<li>external stylesheets</li>
+							<li>user agent stylesheet</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="http://oli.jp/img/2011/important-inheritance.png">
+					</section>
+
+					<section>
+						<h2>Basic Inspecting</h2>
+						<p>CSS Inheritance on individual elements:</p>
+						<ul style="width: 600px;">
+							<li>Id
+								<pre><code>#slider</code></pre>
+							</li>
+							<li>Class
+								<pre><code>.slider</code></pre>
+							</li>
+							<li>Tag
+								<pre><code>div</code></pre>
+							</li>
+						</ul>
+						<br>
+						<br>
+						<a href="http://css-tricks.com/specifics-on-css-specificity/" target="_blank" style="font-size:24px;">A CSS-tricks post on CSS specificity and point values</a>
+					</section>
+
+					<section>
+						<h2>Basic Inspecting</h2>
+						<ul>
+							<li>Live box model at the bottom of Styles tab </li>
+						</ul>
+						<img src="images/box-model.png">
+					</section>
+
+					<section>
+						<h2>Basic Inspecting</h2>
+						<ul>
+							<li>To add new styles, click the + icon</li>
+							<img src="images/add-new-element.png">
+
+							<li>To view pseudo classes, click the arrow icon</li>
+							<img src="images/pseudo-class.png">
+						</ul>
+					</section>
+
+
+					<section>
+						<h2>Exercise!</h2>
+						<ul>
+							<li>Reorder the nav on the GDI homepage to this order:<br>
+								<img src="images/gdi-nav.png">
+								<li>Determine the rendered size of the orange wrench image at a screen width of 1100px</li>
+								<li>Remove underline on hover state of nav items, and instead make text italic</li>
+							</ul>
+						</section>
+
+						<section>
+							<p>We made it through the basics!</p>
+							<br>
+							<img src="http://i.perezhilton.com/wp-content/uploads/2014/07/seinfeld-celebration.gif" style="margin: 0 auto;">
+							<br>
+							<br>
+							<p>Any questions?</p>
+						</section>
+
+						<section>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<p>Let's look through the demo site and code!</p>
+						</section>
+
+						<section>
+							<h2>Device Emulation</h2>
+							<ul>
+								<p>To view a mobile version of a site:</p>
+								<li>Toggle the phone icon next to the magnifying glass</li>
+								<li>Select options</li>
+								<li>Refresh the page</li>
+								<li>This is useful for debugging touch events like swipe!</li>
+								<li>Chrome 38 Beta includes an even further enhanced Device tool, which allows for draggable breakpoints. Read more <a href="http://blog.chromium.org/2014/09/responsive-web-design-with-devtools.html" target="_blank">here</a></li>
+							</ul>
+						</section>
+
+						<section>
+							<h2>Resources Tab</h2>
+							<ul>
+								<li>A way to view the directory of all rendered local and remote project files</li>
+								<li>Updates live as content is updated, (ex. lazy loading images)</li>
+							</ul>
+						</section>
+
+						<section>
+							<h2>Sources Tab</h2>
+							<ul>
+								<li>A way to view and edit project source code</li>
+								<li>Saving files here means you don't need to copy/paste from DevTools to local files!
+									<ul>
+										<li>Right click > Save As > Local directory file name</li>
+										<li>Open revision history by right click > Local Modifications > History Tab</li>
+										<li>Revert as needed</li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+
+						<section>
+							<h2>Workspaces</h2>
+							<ul>
+								<li>As an alternative to saving over individual files, we can use Workspaces to map entire directories</li>
+								<li>With this, changes are automatically updated in local files!</li>
+								<li>Settings > Workspace (in left nav) > Add Folder > Permission</li>
+							</ul>
+						</section>
+
+						<section>
+
+							<img src="http://media.giphy.com/media/2iwhpAm03GqGc/giphy.gif" style="margin-top:15%;">
+						</section>
+
+						<section>
+							<h2>Workspaces</h2>
+							<ul>
+								<li>Workspaces can be used with preprocessors like <a href="http://sass-lang.com/" target="_blank">Sass</a> too!</li>
+								<li>Requires Sass version 3.3+, CSS sourcemaps, + Chrome Canary  </li>
+								<li>This <a href="https://medium.com/@toolmantim/getting-started-with-css-sourcemaps-and-in-browser-sass-editing-b4daab987fb0" target="_blank" >easy-to-follow tutorial</a> explains how to get set up</li>
+							</ul>
+						</section>
+
+						<section>
+							<h2>Exercise!</h2>
+							<br>
+							<ul>
+								<li>Map your local project folder to the browser</li>
+								<li>Make 3 style updates</li>
+								<li>Revert changes</li>
+							</ul>
+						</section>
+
+
+						<section>
+							<h2>Networks Tab</h2>
+							<ul>
+								<li>Another way to view site files and server requests/responses</li>
+								<li>Useful for checking whether requests are being delivered or sent successfully</li>
+
+								<li>Option icons in upper left:</li>
+								<ul>
+									<li>Record</li>
+									<li>Clear</li>
+									<li>Filter</li>
+									<li>Display</li>
+								</ul>
+							</ul>
+						</section>
+
+						<section>
+							<h2>Networks Tab</h2>
+							<ul>
+								<li>Identifies GET or POST method</li>
+							</ul>
+
+							<img src="https://cdn.tutsplus.com/net/authors/jeremymcpeak/http1-req-res-details.png" width="600"><br>
+							<a href="http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177" target="_blank">HTTP tutorial</a>
+
+						</section>
+
+						<section>
+							<h2>Networks Tab</h2>
+							<ul>
+								<li>Local files return a status of finished/failed</li>
+								<li>Remote files return a HTTP status number, usually in the 200-500 range
+									<ul>
+										<li>200: success</li>
+										<li>304: cached content</li>
+										<li>404: not found</li>
+									</ul>
+								</li>
+								<li><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank">Full list of protocols</a></li>
+							</ul>
+						</section>
+
+						<section>
+							<h2>Networks Tab</h2>
+							<ul>
+								<li>Click into an individual file to view more information</li>
+							</ul>
+							<img src="images/headers.png">
+						</section>
+
+						<section>
+							<h2>Console</h2>
+							<ul>
+								<li>Prints error messages with line numbers when there are network issues</li>
+								<li>Prints console.log() messages from code</li>
+								<li>Also serves as a live JavaScript console</li>
+							</ul>
+						</section>
+
+						<section>
+							<h2>Exercise!</h2>
+							<br>
+							<ul>
+								<li>Open exercise.html in browser</li>
+								<li>Determine which network errors are occurring</li>
+								<li>Correct what you think is causing the errors using the Networks Tab and Console</li>
+
+							</ul>
+						</section>
+
+						<section>
+							<h2>Audits Tab</h2>
+							<ul>
+								<li>Runs a performance test on your page + offers suggestions for optimization</li>
+							</ul>
+							<img src="images/audits.png">
+
+						</section>
+
+						<section>
+							<h2>Timelines Tab</h2>
+							<ul>
+								<li>Another tool to analyze site performance</li>
+								<li>Graphs the time to load, script, render, and paint the DOM</li>
+								<li>Any points under 30 frames/second are red flags</li>
+							</ul>
+							<img src="images/timeline.png">
+
+						</section>
+
+						<section>
+							<h2>Profiles Tab</h2>
+							<ul>
+								<li>Provides additional information about how much processing time each function takes</li>
+								<li>Can be a good way to uncover expensive functions that may be overkill, like looping through too many iterations</li>
+								<li>Best to record small events at a time</li>
+						</section>
+
+						<section>
+							<h2>JavaScript Debugger</h2>
+							<ul>
+								<li>A feature that allows us to pause functions with breakpoints</li>
+								<li>Helpful for stepping through functionality line by line</li>
+							</ul>
+							<img src="images/debugger.png">
+
+						</section>
+						<section>
+							<h2>JavaScript Debugger</h2>
+							<ul>
+								<li>Set breakpoints by clicking on line numbers within functions</li>
+								<li>Refresh the page</li>
+								<li>The JS will pause at the first breakpoint</li>
+								<li>Now we can hover over variable to evaluate their states, use the console to type code, and step over/in/out of functions</li>
+								<li>Let's debug the am/pm issue with the 'Check the Time!' button</li>
+						</section>
+
+						<section>
+							<h2>Further Resources</h2>
+							<br>
+							<ul>
+								<li><a href="https://developer.chrome.com/devtools/index">Chrome's Documentation Site</a></li>
+								<li><a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBQ8j3J_PyM8JLAGKqZRByw">The Breakpoint Video Series</a></li>
+								<li><a href="https://twitter.com/ChromiumDev">@ChromiumDev on Twitter</a></li>
+								<li><a href="http://discover-devtools.codeschool.com/">Free Code School Course</a></li>
+								<li><a href="http://developer.chrome.com/devsummit">Chrome Dev Summit</a></li>
+							</ul>
+						</section>
+
+						<section>
+							<p>Any questions?</p>
+							<img src="http://media0.giphy.com/media/achoDiZFxZvdm/giphy.gif">
+							<p>Stay in touch!</p>
+							<a href="mailto:alexandra.hoefinger@gmail.com?">alexandra.hoefinger@gmail.com</a><br>
+							<a href="https://twitter.com/ahoefinger">@ahoefinger</a>
+						</section>
+
+						<section>
+							<br>
+							<br>
+							<br>
+							<br>
+							<p>Please fill out our survey!</p>
+							<a href="http://bit.ly/gdi-chrome-tools">http://bit.ly/gdi-chrome-tools</a>
+						</section>
+
+					</div>
+					<footer>
+						<div class="copyright">
+							Getting More Out of Chrome's Developer Tools -- GDI Philly
+							<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+						</div>
+					</footer>
+				</div>
+
+
+				<script src="lib/js/head.min.js"></script>
+				<script src="js/reveal.min.js"></script>
+
+				<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+</script>
+
+</body>
+</html>
